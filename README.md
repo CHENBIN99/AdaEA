@@ -42,9 +42,9 @@ We use the dataset including CIFAR-10, CIFAR-100 and ImageNet. If the CIFAR-10/1
 | -- data
      | -- ImageNet
           | -- val
-    		   | -- n15075141
-    		   | -- n13133613
-    		   | -- ......
+               | -- n15075141
+               | -- n13133613
+               | -- ......
 ```
 
 For the attack method, only the validation set is needed, not the training set.
