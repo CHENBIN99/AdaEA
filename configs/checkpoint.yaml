@@ -1,0 +1,71 @@
+wrn50_2:
+ full_name: wide_resnet50_2
+ ckp_path: wrn50_2/wide_resnet50_2.pth.tar
+
+wrn101_2:
+ full_name: wide_resnet101_2
+ ckp_path: wrn101_2/wide_resnet101_2.pth.tar
+
+resnet18:
+ full_name: resnet18
+ ckp_path: resnet18/resnet18.pth.tar
+
+resnet34:
+ full_name: resnet34
+ ckp_path: resnet34/resnet34.pth.tar
+
+resnet50:
+ full_name: resnet50
+ ckp_path: resnet50/resnet50.pth.tar
+
+inc_v3:
+ full_name: inception_v3
+ ckp_path: inc_v3/inception_v3.pth.tar
+
+inc_v4:
+ full_name: inception_v4
+ ckp_path: inc_v4/inception_v4.pth.tar
+
+bit50_1:
+ full_name: resnetv2_50x1_bitm
+ ckp_path: bit50_1/resnetv2_50x1_bitm.pth.tar
+
+bit101_1:
+ full_name: resnetv2_101x1_bitm
+ ckp_path: bit101_1/resnetv2_101x1_bitm.pth.tar
+
+vit_b:
+ full_name: vit_base_patch16_224
+ ckp_path: vit_b/vit_base.pth.tar
+
+vit_s:
+ full_name: vit_small_patch16_224
+ ckp_path: vit_s/vit_small.pth.tar
+
+vit_t:
+ full_name: vit_tiny_patch16_224
+ ckp_path: vit_t/vit_tiny.pth.tar
+
+deit_b:
+ full_name: deit_base_patch16_224
+ ckp_path: deit_b/deit_base.pth.tar
+
+deit_s:
+ full_name: deit_small_patch16_224
+ ckp_path: deit_s/deit_small.pth.tar
+
+deit_t:
+ full_name: deit_tiny_patch16_224
+ ckp_path: deit_t/deit_tiny.pth.tar
+
+swin_b:
+ full_name: swin_base_patch4_window7_224
+ ckp_path: swin_b/swin_base.pth.tar
+
+swin_s:
+ full_name: swin_small_patch4_window7_224
+ ckp_path: swin_s/swin_small.pth.tar
+
+swin_t:
+ full_name: swin_tiny_patch4_window7_224
+ ckp_path: swin_t/swin_tiny.pth.tar
