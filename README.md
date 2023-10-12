@@ -81,13 +81,13 @@ You can run the **AdaEA** with `attack.py`. We run the script with RTX A6000:
 
 If our work is helpful for your research, please cite our publication:
 ```
-@misc{chen2023adaptive,
-      title={An Adaptive Model Ensemble Adversarial Attack for Boosting Adversarial Transferability}, 
-      author={Bin Chen and Jia-Li Yin and Shukai Chen and Bo-Hao Chen and Ximeng Liu},
-      year={2023},
-      eprint={2308.02897},
-      archivePrefix={arXiv},
-      primaryClass={cs.CV}
+@InProceedings{Chen_2023_ICCV,
+    author    = {Chen, Bin and Yin, Jiali and Chen, Shukai and Chen, Bohao and Liu, Ximeng},
+    title     = {An Adaptive Model Ensemble Adversarial Attack for Boosting Adversarial Transferability},
+    booktitle = {Proceedings of the IEEE/CVF International Conference on Computer Vision (ICCV)},
+    month     = {October},
+    year      = {2023},
+    pages     = {4489-4498}
 }
 ```
 
