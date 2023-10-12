@@ -30,7 +30,9 @@ Put the pre-trained weights of each model into the following directory:
 
 `./checkpoint_file/cifar10/` and `./checkpoint_file/cifar100`
 
-For the pre-trained model of ImageNet, it will be automatically downloaded from the [TIMM](https://github.com/huggingface/pytorch-image-models).
+As for the pre-trained model of CIFAR-10/100, it can be downloaded from [Google Drive](https://drive.google.com/drive/folders/19z1Sd-FFC2rGFkc93lqVDbmHcxBxZlNt?usp=sharing)
+
+As for the pre-trained model of ImageNet, it will be automatically downloaded from the [TIMM](https://github.com/huggingface/pytorch-image-models).
 
 
 

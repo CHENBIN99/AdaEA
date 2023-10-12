@@ -7,10 +7,10 @@ from attack.AdaEA_Base import AdaEA_Base
 
 
 class AdaEA_FGSM(AdaEA_Base):
-    def __init__(self, models, eps=8 / 255, max_value=1., min_value=0., threshold=0., beta=10, no_agm=False,
-                 no_drf=False, device=torch.device('cuda:0' if torch.cuda.is_available() else 'cpu')):
+    def __init__(self, models, eps=8 / 255, max_value=1., min_value=0., threshold=0., beta=10,
+                 device=torch.device('cuda:0' if torch.cuda.is_available() else 'cpu')):
         super().__init__(models=models, eps=eps, max_value=max_value, min_value=min_value, threshold=threshold,
-                         device=device, beta=beta, no_agm=no_agm, no_drf=no_drf)
+                         device=device, beta=beta)
         self.attack_step = eps
 
     def attack(self, data, label, idx=-1):
@@ -32,18 +32,12 @@ class AdaEA_FGSM(AdaEA_Base):
                  for idx in range(len(self.models))]
 
         # AGM
-        if not self.no_agm:
-            alpha = self.agm(ori_data=data, cur_adv=adv_data, grad=grads, label=label)
-        else:
-            alpha = torch.tensor([1 / self.num_models] * self.num_models, dtype=torch.float, device=self.device)
+        alpha = self.agm(ori_data=data, cur_adv=adv_data, grad=grads, label=label)
 
         # DRF
-        if not self.no_drf:
-            cos_res = self.drf(grads, data_size=data_size)
-            cos_res[cos_res >= self.threshold] = 1.
-            cos_res[cos_res < self.threshold] = 0.
-        else:
-            cos_res = torch.ones([B, 1, H, W])
+        cos_res = self.drf(grads, data_size=data_size)
+        cos_res[cos_res >= self.threshold] = 1.
+        cos_res[cos_res < self.threshold] = 0.
 
         output = torch.stack(outputs, dim=0) * alpha.view(self.num_models, 1, 1)
         output = output.sum(dim=0)

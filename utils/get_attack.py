@@ -6,7 +6,7 @@ def get_attack(args, ens_models, device, models=None):
     if args.attack_method == 'AdaEA_FGSM':
         attack_method = AdaEA_FGSM.AdaEA_FGSM(
             ens_models, eps=args.eps, max_value=args.max_value, min_value=args.min_value, threshold=args.threshold,
-            beta=args.beta, no_agm=args.no_agm, no_drf=args.no_drf, device=device)
+            beta=args.beta, device=device)
     elif args.attack_method == 'AdaEA_IFGSM':
         attack_method = AdaEA_IFGSM.AdaEA_IFGSM(
             ens_models, eps=args.eps, alpha=args.alpha, iters=args.iters, max_value=args.max_value,

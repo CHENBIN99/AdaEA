@@ -8,8 +8,8 @@ import torch.nn.functional as F
 
 
 class AdaEA_Base:
-    def __init__(self, models, eps=8/255, alpha=2/255, max_value=1., min_value=0., threshold=0., beta=10, no_agm=False,
-                 no_drf=False, device=torch.device('cuda:0' if torch.cuda.is_available() else 'cpu')):
+    def __init__(self, models, eps=8/255, alpha=2/255, max_value=1., min_value=0., threshold=0., beta=10,
+                 device=torch.device('cuda:0' if torch.cuda.is_available() else 'cpu')):
         assert isinstance(models, list) and len(models) >= 2, 'Error'
         self.device = device
         self.models = models
@@ -24,10 +24,6 @@ class AdaEA_Base:
         self.min_value = min_value
         self.beta = beta
         self.alpha = alpha
-
-        # op
-        self.no_agm = no_agm
-        self.no_drf = no_drf
 
     def get_adv_example(self, ori_data, adv_data, grad, attack_step=None):
         """

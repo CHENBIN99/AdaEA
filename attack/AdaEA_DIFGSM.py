@@ -60,19 +60,12 @@ class AdaEA_DIFGSM(AdaEA_Base):
                      for idx in range(len(self.models))]
 
             # AGM
-            if not self.no_agm:
-                if i == 0:
-                    alpha = self.agm(ori_data=data, cur_adv=adv_data, grad=grads, label=label)
-            else:
-                alpha = torch.tensor([1 / self.num_models] * self.num_models, dtype=torch.float, device=self.device)
+            alpha = self.agm(ori_data=data, cur_adv=adv_data, grad=grads, label=label)
 
             # DRF
-            if not self.no_drf:
-                cos_res = self.drf(grads, data_size=(B, C, H, W))
-                cos_res[cos_res >= self.threshold] = 1.
-                cos_res[cos_res < self.threshold] = 0.
-            else:
-                cos_res = torch.ones([B, 1, H, W])
+            cos_res = self.drf(grads, data_size=(B, C, H, W))
+            cos_res[cos_res >= self.threshold] = 1.
+            cos_res[cos_res < self.threshold] = 0.
 
             output = torch.stack(outputs, dim=0) * alpha.view(self.num_models, 1, 1)
             output = output.sum(dim=0)

@@ -7,7 +7,6 @@ from utils.AverageMeter import AccuracyMeter
 
 # checkpoint yaml file
 yaml_path = '../configs/checkpoint.yaml'
-adv_yaml_path = 'checkpoint_adv.yaml'
 
 
 def get_models(args, device):
